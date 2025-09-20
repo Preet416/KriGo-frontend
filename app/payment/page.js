@@ -1,9 +1,6 @@
-import dynamic from "next/dynamic";
+"use client"; 
 
-// Load the client-only Payment component
-const PaymentPageClient = dynamic(() => import("./PaymentPageClient"), {
-  ssr: false, // disables server-side rendering
-});
+import PaymentPageClient from "./PaymentPageClient";
 
 export default function Page() {
   return <PaymentPageClient />;
