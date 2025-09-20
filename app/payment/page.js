@@ -1,4 +1,4 @@
-"use client"; // Make the entire page client-side
+"use client"; // Entire page is client-only
 
 import PaymentPageClient from "./PaymentPageClient";
 
