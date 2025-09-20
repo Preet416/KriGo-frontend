@@ -17,6 +17,7 @@ export default function PaymentPageClient() {
   const [stripePromise, setStripePromise] = useState(null);
   const [error, setError] = useState("");
 
+  // Load Stripe client
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) {
       setStripePromise(loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY));
@@ -26,6 +27,7 @@ export default function PaymentPageClient() {
     }
   }, []);
 
+  // Create payment intent
   useEffect(() => {
     if (amount <= 0) {
       setError("Invalid amount. Add ?amount=100 to URL");
